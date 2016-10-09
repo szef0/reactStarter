@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>szef0 - React Starting Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div id="content"></div>
+
+    <script type="text/jsx">
+
+        var Szef0Component = React.createClass({
+            doSomething: function() {
+                alert(this.props.children);
+            },
+            render: function() {
+                return(
+                        <div>
+                            <h3>{this.props.user}</h3>
+                            <a onClick={this.doSomething} href="#" >Click!</a>
+                        </div>
+                );
+            }
+        }); 
+
+        React.render(
+                <div>
+                    <Szef0Component user="React">React Works Just Fine!</Szef0Component>  
+                </div>,
+                document.getElementById('content')
+        );
+
+    </script>
+
+</body>
+</html>
